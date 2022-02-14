@@ -9,21 +9,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Vector3 position = transform.position;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            position.x -= speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-            position.x += speed * Time.deltaTime;
-        }
-
-        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
-
-        // Clamp the position of the character so they do not go out of bounds
-        position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
-        transform.position = position;
+        string move = "";
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            move = "right";
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            move = "left";
+        Move(move);
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
@@ -42,6 +34,27 @@ public class Player : MonoBehaviour
             laser.destroyed += OnLaserDestroyed;
         }
     }
+    internal void Move(string move)
+    {
+        Vector3 position = transform.position;
+        if (move=="left")
+        {
+            position.x -= speed * Time.deltaTime;
+        }
+        else if (move=="right")
+        {
+            position.x += speed * Time.deltaTime;
+        }
+
+        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
+        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+
+        // Clamp the position of the character so they do not go out of bounds
+        position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
+        transform.position = position;
+
+    }
+
 
     private void OnLaserDestroyed(Projectile laser)
     {
@@ -58,5 +71,6 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 
 }
