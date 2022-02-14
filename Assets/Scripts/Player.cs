@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    internal void Shoot()
     {
         // Only one laser can be active at a given time so first check that
         // there is not already an active laser
