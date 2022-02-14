@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 33052392596605684}
   - component: {fileID: 33052392596605687}
   - component: {fileID: 33052392596605686}
+  - component: {fileID: 2144636726144433816}
+  - component: {fileID: 6882855723495010375}
+  - component: {fileID: 7170168840301231883}
   m_Layer: 8
   m_Name: Laser
   m_TagString: Untagged
@@ -30,6 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,6 +49,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -146,3 +151,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   direction: {x: 0, y: 1, z: 0}
+--- !u!114 &2144636726144433816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33052392596605683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6882855723495010375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33052392596605683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 417179157, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7170168840301231883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33052392596605683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -508812344, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _savedProperties:
+  - myStrings:
+    - IntPair
+    Count: 1
+  - myStrings:
+    - IntPair
+    - x
+    Count: 2
+  - myStrings:
+    - IntPair
+    - y
+    Count: 2
+  _toMapProperties:
+  - myStrings:
+    - IntPair
+    - x
+    Count: 2
+  - myStrings:
+    - IntPair
+    - y
+    Count: 2
+  _configurationName: laserSensor
+  operationPerPropertyIndexes: 44a885c012185c6611185c66
+  operationPerPropertyOperations: 000000000000000000000000
+  specificValuePerPropertyIndexes: 44a885c012185c6611185c66
+  specificValuePerPropertyValues:
+  - 
+  - 
+  - 
