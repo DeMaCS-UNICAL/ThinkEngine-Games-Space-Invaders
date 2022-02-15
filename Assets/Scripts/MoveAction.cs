@@ -22,6 +22,7 @@ public class MoveAction : Action
     public override State Prerequisite()
     {
         // qui va controllato il fatto di non uscire dalle pareti? credo sia inutile
+        //DENISE: no, questo tanto lo controlla il gioco nel momento in cui applichi la move.
         throw new System.NotImplementedException();
     }
 }
