@@ -7,20 +7,20 @@ public class FireAction : Action
 {
     public override void Do()
     {
+        Debug.Log("FIRE ACTION - DO");
         FindObjectOfType<Player>().Shoot();
-        throw new System.NotImplementedException();
     }
 
     public override bool Done()
     {
+        Debug.Log("FIRE ACTION - DONE");
         return true;
     }
 
     public override State Prerequisite()
     {
-        // il laser active lo devo controllare nei prerequisiti? Come si ritorna lo stato?
-        //DENISE: non serve controllare il laser active, al massimo gli dici di sparare anche se sta già sparando;
-        //per ritornare lo stato basta fare State.WAIT/State.ABORT/State.READY
-        throw new System.NotImplementedException();
+        Debug.Log("FIRE ACTION - PREREQUISITE");
+        //State must be returned using State.WAIT|State.ABORT|State.READY
+        return State.READY;
     }
 }
