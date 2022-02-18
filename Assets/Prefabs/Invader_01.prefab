@@ -7,6 +7,82 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[3].Count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[4].Count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: operationPerPropertyIndexes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: operationPerPropertyIndexes.Array.data[3]
+      value: -662673581
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: operationPerPropertyIndexes.Array.data[4]
+      value: -662673581
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: operationPerPropertyOperations.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: specificValuePerPropertyValues.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: specificValuePerPropertyIndexes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: specificValuePerPropertyIndexes.Array.data[3]
+      value: -662673581
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: specificValuePerPropertyIndexes.Array.data[4]
+      value: -662673581
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[3].myStrings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[4].myStrings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[3].myStrings.Array.data[0]
+      value: IntPair
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[3].myStrings.Array.data[1]
+      value: transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[3].myStrings.Array.data[2]
+      value: position
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[4].myStrings.Array.data[0]
+      value: IntPair
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[4].myStrings.Array.data[1]
+      value: transform
+      objectReference: {fileID: 0}
+    - target: {fileID: 935873177131031976, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
+      propertyPath: _savedProperties.Array.data[4].myStrings.Array.data[2]
+      value: position
+      objectReference: {fileID: 0}
     - target: {fileID: 1788622360293551478, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -110,18 +186,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1788622360293551482, guid: 92725eb3a0283d641835e37afa65bda1, type: 3}
   m_PrefabInstance: {fileID: 7736245207962089148}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8613049867110909388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8326835239296687046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2619445466429220533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +239,15 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &8613049867110909388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326835239296687046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

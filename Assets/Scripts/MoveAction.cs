@@ -19,6 +19,13 @@ public class MoveAction : Action
 
     public override State Prerequisite()
     {
+        //State must be returned using State.WAIT|State.ABORT|State.READY
+        if (FindObjectOfType<Player>() == null)
+            return State.ABORT;
+
+        if (!belongingTO.IsExecuting && GameObject.Find("Planner").GetComponent<PlannerBrainsCoordinator>().priorityExecuting == belongingTO.priority)
+            return State.WAIT;
+
         return State.READY;
     }
 }
