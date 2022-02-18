@@ -759,6 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableBrain: 1
   debug: 0
+  maintainInputFile: 0
   _chosenSensorConfigurations:
   - playerSensor
   - invader_03Sensor
@@ -774,7 +775,7 @@ MonoBehaviour:
   AIFilesPrefix: PlannerPlanner1
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner1.asp
   prefabBrain: 0
-  _executeReasonerOn: PlannerExecutionPriority
+  _executeReasonerOn: RunReasoner
   specificAIFile: 0
   globalAIFile: 0
   _priority: 0
