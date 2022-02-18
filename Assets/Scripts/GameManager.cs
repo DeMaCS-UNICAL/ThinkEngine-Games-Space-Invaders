@@ -93,7 +93,7 @@ public sealed class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
 
         if (lives > 0) {
-            Invoke(nameof(NewRound), 1f);
+            Invoke(nameof(Respawn), 1f);
         } else {
             GameOver();
         }
