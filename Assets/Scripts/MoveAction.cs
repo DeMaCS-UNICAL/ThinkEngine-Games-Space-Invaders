@@ -22,7 +22,7 @@ public class MoveAction : Action
         //State must be returned using State.WAIT|State.ABORT|State.READY
         if (FindObjectOfType<Player>() == null)
         {
-            Debug.Log("MOVE - ABORT");
+//            Debug.Log("MOVE - ABORT");
             return State.ABORT;
         }
         /*
@@ -32,7 +32,7 @@ public class MoveAction : Action
             return State.WAIT;
         }
         */
-        Debug.Log("MOVE - READY");
+//        Debug.Log("MOVE - READY");
         return State.READY;
     }
 }

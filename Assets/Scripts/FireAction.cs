@@ -17,10 +17,14 @@ public class FireAction : Action
 
     public override State Prerequisite()
     {
+        // RECOMPUTE PLAN WHEN:
+            // 1.ENEMIES DIRECTION CHANGES
+            // 2.ENEMY KILLED
+
         //State must be returned using State.WAIT|State.ABORT|State.READY
         if (FindObjectOfType<Player>() == null)
         {
-            Debug.Log("FIRE - ABORT");
+//            Debug.Log("FIRE - ABORT");
             return State.ABORT;
         }
         /*
@@ -30,7 +34,7 @@ public class FireAction : Action
             return State.WAIT;
         }
         */
-        Debug.Log("FIRE - READY");
+//        Debug.Log("FIRE - READY");
         return State.READY;
     }
 }
