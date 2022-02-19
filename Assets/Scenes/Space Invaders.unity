@@ -771,6 +771,7 @@ MonoBehaviour:
   - bunkerSensor01
   - bunkerSensor
   - bunkerSensor0
+  - invadersSensor
   AIFilesPath: .\Assets\StreamingAssets\
   AIFilesPrefix: PlannerPlanner1
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner1.asp
@@ -841,6 +842,10 @@ GameObject:
   m_Component:
   - component: {fileID: 962212319}
   - component: {fileID: 962212320}
+  - component: {fileID: 962212324}
+  - component: {fileID: 962212323}
+  - component: {fileID: 962212322}
+  - component: {fileID: 962212321}
   m_Layer: 0
   m_Name: Invaders
   m_TagString: Untagged
@@ -909,6 +914,82 @@ MonoBehaviour:
   columns: 11
   missilePrefab: {fileID: 6161936928069685931, guid: 3c328e673b90a7f418f1f1e66f83522b, type: 3}
   missileSpawnRate: 1
+--- !u!114 &962212321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962212318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -508812344, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _savedProperties:
+  - myStrings:
+    - Invaders
+    Count: 1
+  - myStrings:
+    - Invaders
+    - direction
+    Count: 2
+  - myStrings:
+    - Invaders
+    - direction
+    - x
+    Count: 3
+  _toMapProperties:
+  - myStrings:
+    - Invaders
+    - direction
+    - x
+    Count: 3
+  _configurationName: invadersSensor
+  operationPerPropertyIndexes: d789c3d8ba55e0635c19572e
+  operationPerPropertyOperations: 000000000000000000000000
+  specificValuePerPropertyIndexes: d789c3d8ba55e0635c19572e
+  specificValuePerPropertyValues:
+  - 
+  - 
+  - 
+--- !u!114 &962212322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962212318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 959823392, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+--- !u!114 &962212323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962212318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1086532457, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &962212324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962212318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 417179157, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1001845995
 GameObject:
   m_ObjectHideFlags: 0

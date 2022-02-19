@@ -219,14 +219,15 @@ MonoBehaviour:
   _savedProperties:
   - myStrings:
     - IntPair
-    Count: 1
-  - myStrings:
-    - IntPair
     - x
     Count: 2
   - myStrings:
     - IntPair
     - y
+    Count: 2
+  - myStrings:
+    - transform
+    - position
     Count: 2
   _toMapProperties:
   - myStrings:
@@ -238,9 +239,9 @@ MonoBehaviour:
     - y
     Count: 2
   _configurationName: invader_01Sensor
-  operationPerPropertyIndexes: 44a885c012185c6611185c66
+  operationPerPropertyIndexes: 12185c6611185c66d0c3c322
   operationPerPropertyOperations: 000000000000000000000000
-  specificValuePerPropertyIndexes: 44a885c012185c6611185c66
+  specificValuePerPropertyIndexes: 12185c6611185c66d0c3c322
   specificValuePerPropertyValues:
   - 
   - 
