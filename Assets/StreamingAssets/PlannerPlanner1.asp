@@ -48,32 +48,71 @@ most_left_invader(X,Y,T) :- #min{C: invaders(C,Y,T)}=X, invaders(_,Y,T).
 most_right_invader(X,Y,T) :- #max{C: invaders(C,Y,T)}=X, invaders(_,Y,T).
 
 nearest_y_invader(X,Y,T) :- #min{C: invaders(_,C,T)}=Y, invaders(X,_,T).
+invaders_near_player(T) :- invaders(_,Y1,T), player(_,Y2,T), Y1>=Y2, Y1-Y2<=5.
 
 
 % STRATEGIA DI MOVIMENTO
 % NON ANDARE IN PUNTI ESTREMI (DESTRA/SINISTRA) DOVE NON CI SONO INVADERS
-:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,_,T), most_left_invader(X2,_,T), X1<=X2, T_Next=T+1.
-:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,_,T), X1>=X2, T_Next=T+1.
+%:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,_,T), most_left_invader(X2,_,T), X1<=X2, T_Next=T+1.
+%:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,_,T), X1>=X2, T_Next=T+1.
 
-% SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù A SINISTRA
-:~player(X1,_,T), most_left_invader(X2,_,T), X=X2-X1, X2>X1. [X@4,X1,X2]
-distance_left_column(X,T):- player(X1,_,T), most_left_invader(X2,_,T), X=X1-X2, X1>=X2.
+% SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù A SINISTRA (AD INIZIO GIOCO)
+:~not invaders_near_player(T), player(X1,_,T), most_left_invader(X2,_,T), X=X2-X1, X2>X1. [X@4,X1,X2]
+distance_left_column(X,T) :- not invaders_near_player(T), player(X1,_,T), most_left_invader(X2,_,T), X=X1-X2, X1>=X2.
 :~distance_left_column(X,T). [X@4,T]
 
-% SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù BASSE
-:~player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X2>X1. [X@3,X1,X2]
-distance_player_invader(X,T):- player(X1,_,T), nearest_y_invader(X2,_,T), X=X1-X2, X1>=X2.
-:~distance_player_invader(X,T). [1@3,T]
+% SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù BASSE QUANDO GLI INVADERS SONO VICINISSIMI AL PLAYER (IN ALTEZZA)
+:~invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X2>X1. [X@4,X1,X2]
+distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X1-X2, X1>=X2.
+:~distance_player_invader(X,T). [1@4,T]
 
 % PREFERISCI SPOSTAMENTI CONTRARI RISPETTO LA DIREZIONE DEGLI INVADERS
 :~actionArgument(_,"move",M), invaders_direction(M). [1@2,M]
 
+% PREFERISCI SPOSTAMENTI CONTINUI NELLA STESSA DIREZIONE
+:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2=T1+1, M1!=M2. [1@2,T1,M1,T2,M2]
+
+no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, invaders(X,_,T).
+:~applyAction(T_Next,"FireAction"), player(X,_,T), no_invaders_in_columns(X,T), T_Next=T+1. [1@5,T_Next,X,T]
+
+% DIFESA
+% PREFERISCI SPOSTARTI SE TI STANNO SPARANDO E NON TI TROVI SOTTO UN BUNKER
+%:~applyAction(T_Next,"FireAction"), missile(X,Y1,T), player(X,Y2,T), not bunker(X,Y2), Y2<=Y1-6, T_Next=T+1. [1@5,T,X,Y1,Y2]
+
+% NON SPARARE A VUOTO ---- ATTENZIONE, NON FUNZIONA PERCHè CI VORREBBE UN TRIGGER CHE MI FA RICALCOLARE IL PIANO QUANDO UN NEMICO
+    % MUORE, ALTRIMENTI LUI CREDE CHE SOPRA CI SIAMO NEMICI DATO CHE NON AGGIORNO IL LORO STATO A "KILLED"
+%:~applyAction(T_Next,"FireAction"), invaders(X,Y,T), y(Y), player(X,_,T), T_Next=T+1. [1@1,X,Y,T]
 
 
+% NON SPARARE AI BUNKER ---- ATTENZIONE, NON FUNZIONA PER VIA DEI PROBLEMI DI CONVERSIONE IN INT (BUNKER IN POS (3,_), PLAYER IN POS (2,_)
+    % IL PLAYER SPARA MA DISTRUGGE UGUALMENTE IL BUNKER PERCHè è PIù GRANDE)
+%:~applyAction(T_Next,"FireAction"), player(X,_,T), bunker(X,_), T_Next=T+1. [1@5,X,T]
+
+
+
+% ATTACCO
+% SPARA SE SEI SOTTO UN INVADERS
+%:~applyAction(T,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T). [1@6,T,X]
+%:~applyAction(T,"MoveAction"), invaders(X,_,T), player(X,_,T). [1@1,T,X]
 
 
 
 #show applyAction/2. 
 #show actionArgument/3.
-#show most_left_invader/3.
-#show player/3.
+%#show most_left_invader/3.
+%#show player/3.
+
+
+% STRATEGY:
+% 1. DISTRUGGI PRIMA I NEMICI PER COLONNE PARTENDO DALLA SINISTRA --> SE LE COLONNE DIMINUISCONO, CI 
+    % VOGLIONO PIù STEP PRIMA CHE POSSANO SCENDERE DI LIVELLO
+% 2. DISTRUGGI I NEMICI SULLE RIGHE PIù IN BASSO
+% 3. NON SPARARE SE SEI SOTTO UN BUNKER
+% 4. NON SPARARE SE NON CI SONO NEMICI SOPRA DI TE (NON SPARARE A VUOTO)
+% 5. SE TI TROVI SOTTO UN NEMICO è PREFERIBILE SPARARE 
+% 6. QUANDO TI SPOSTI, CERCA DI SPOSTARTI VERSO I NEMICI DELLE FILE PIù IN BASSO O VERSO LE PRIME COLONNE
+
+% SE IL NEMICO SI TROVA A 5 CELLE Y DA TE, è PREFERIBILE SPARARE A QUELLI PIù VICINI
+
+% PROBLEMI DURANTE LA PIANIFICAZIONE PERCHè IL QUANDO CALCOLO LE FUTURE POSIZIONI DEL PLAYER CON LA CONVERSIONE DA FLOAT A INT
+% HO GRAVI PERDITE: PER ME OGNI VOLTA CHE MI MUOVO MI TROVO IN UN POSIZIONE X_NEXT=X+1, NEL GIOCO CI SI SPOSTA DI +1 OGNI ~31 MOVE NELLA STESSA DIREZIONE!!!
