@@ -81,7 +81,7 @@ no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, invaders(X,_,T).
 
 % NON SPARARE A VUOTO ---- ATTENZIONE, NON FUNZIONA PERCHè CI VORREBBE UN TRIGGER CHE MI FA RICALCOLARE IL PIANO QUANDO UN NEMICO
     % MUORE, ALTRIMENTI LUI CREDE CHE SOPRA CI SIAMO NEMICI DATO CHE NON AGGIORNO IL LORO STATO A "KILLED"
-%:~applyAction(T_Next,"FireAction"), invaders(X,Y,T), y(Y), player(X,_,T), T_Next=T+1. [1@1,X,Y,T]
+:~applyAction(T_Next,"FireAction"), invaders(X,Y,T), y(Y), player(X,_,T), T_Next=T+1. [1@1,X,Y,T]
 
 
 % NON SPARARE AI BUNKER ---- ATTENZIONE, NON FUNZIONA PER VIA DEI PROBLEMI DI CONVERSIONE IN INT (BUNKER IN POS (3,_), PLAYER IN POS (2,_)
