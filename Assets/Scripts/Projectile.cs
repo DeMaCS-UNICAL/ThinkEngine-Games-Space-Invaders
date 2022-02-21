@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public Vector3 direction = Vector3.up;
     public System.Action<Projectile> destroyed;
     public new BoxCollider2D collider { get; private set; }
+    
+    public int increaseFactor;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
+        increaseFactor = (int)((direction * speed * Time.deltaTime).y*1000);
         transform.position += direction * speed * Time.deltaTime;
     }
 

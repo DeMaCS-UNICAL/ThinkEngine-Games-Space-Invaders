@@ -22,7 +22,7 @@ public class Invaders : MonoBehaviour
     public Projectile missilePrefab;
     public float missileSpawnRate = 1f;
 
-    int increaseFactor;
+    public int increaseFactor;
     private void Awake()
     {
         initialPosition = transform.position;
@@ -85,7 +85,7 @@ public class Invaders : MonoBehaviour
     {
         // Evaluate the speed of the invaders based on how many have been killed
         float speed = this.speed.Evaluate(PercentKilled);
-        increaseFactor = (int)(direction*speed * Time.deltaTime).x*1000;
+        increaseFactor = (int)((direction*speed * Time.deltaTime).x*1000);
         transform.position += direction * speed * Time.deltaTime;
 
         // Transform the viewport to world coordinates so we can check when the

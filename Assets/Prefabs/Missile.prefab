@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   direction: {x: 0, y: -1, z: 0}
+  increaseFactor: 0
 --- !u!114 &2528765789058097054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,14 +191,18 @@ MonoBehaviour:
   _savedProperties:
   - myStrings:
     - IntPair
-    Count: 1
-  - myStrings:
-    - IntPair
     - x
     Count: 2
   - myStrings:
     - IntPair
     - y
+    Count: 2
+  - myStrings:
+    - Projectile
+    Count: 1
+  - myStrings:
+    - Projectile
+    - increaseFactor
     Count: 2
   _toMapProperties:
   - myStrings:
@@ -208,11 +213,16 @@ MonoBehaviour:
     - IntPair
     - y
     Count: 2
+  - myStrings:
+    - Projectile
+    - increaseFactor
+    Count: 2
   _configurationName: missileSensor
-  operationPerPropertyIndexes: 44a885c012185c6611185c66
-  operationPerPropertyOperations: 000000000000000000000000
-  specificValuePerPropertyIndexes: 44a885c012185c6611185c66
+  operationPerPropertyIndexes: 60cdfd1b12185c6611185c66557526b8
+  operationPerPropertyOperations: 00000000000000000000000000000000
+  specificValuePerPropertyIndexes: 60cdfd1b12185c6611185c66557526b8
   specificValuePerPropertyValues:
+  - 
   - 
   - 
   - 

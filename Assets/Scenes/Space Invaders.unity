@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableBrain: 1
-  debug: 0
+  debug: 1
   maintainInputFile: 0
   _chosenSensorConfigurations:
   - playerSensor
@@ -766,12 +766,12 @@ MonoBehaviour:
   - invader_02Sensor
   - invader_01Sensor
   - missileSensor
-  - laserSensor
   - bunkerSensor012
   - bunkerSensor01
   - bunkerSensor
   - bunkerSensor0
   - invadersSensor
+  - laserSensor
   AIFilesPath: .\Assets\StreamingAssets\
   AIFilesPrefix: PlannerPlanner1
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner1.asp
@@ -914,6 +914,7 @@ MonoBehaviour:
   columns: 11
   missilePrefab: {fileID: 6161936928069685931, guid: 3c328e673b90a7f418f1f1e66f83522b, type: 3}
   missileSpawnRate: 1
+  increaseFactor: 0
 --- !u!114 &962212321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,17 +940,26 @@ MonoBehaviour:
     - direction
     - x
     Count: 3
+  - myStrings:
+    - Invaders
+    - increaseFactor
+    Count: 2
   _toMapProperties:
   - myStrings:
     - Invaders
     - direction
     - x
     Count: 3
+  - myStrings:
+    - Invaders
+    - increaseFactor
+    Count: 2
   _configurationName: invadersSensor
-  operationPerPropertyIndexes: d789c3d8ba55e0635c19572e
-  operationPerPropertyOperations: 000000000000000000000000
-  specificValuePerPropertyIndexes: d789c3d8ba55e0635c19572e
+  operationPerPropertyIndexes: d789c3d8ba55e0635c19572ebe471894
+  operationPerPropertyOperations: 00000000000000000000000000000000
+  specificValuePerPropertyIndexes: d789c3d8ba55e0635c19572ebe471894
   specificValuePerPropertyValues:
+  - 
   - 
   - 
   - 
@@ -1874,6 +1884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   laserPrefab: {fileID: 33052392596605686, guid: 8cca1da190961a842b34231aade647ef, type: 3}
+  increaseFactor: 0
 --- !u!114 &1639391303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,6 +1906,22 @@ MonoBehaviour:
     - IntPair
     - y
     Count: 2
+  - myStrings:
+    - Player
+    - increaseFactor
+    Count: 2
+  - myStrings:
+    - gameObject
+    - transform
+    Count: 2
+  - myStrings:
+    - gameObject
+    - transform
+    - position
+    Count: 3
+  - myStrings:
+    - Player
+    Count: 1
   _toMapProperties:
   - myStrings:
     - IntPair
@@ -1904,11 +1931,19 @@ MonoBehaviour:
     - IntPair
     - y
     Count: 2
+  - myStrings:
+    - Player
+    - increaseFactor
+    Count: 2
   _configurationName: playerSensor
-  operationPerPropertyIndexes: 12185c6611185c66
-  operationPerPropertyOperations: 0000000000000000
-  specificValuePerPropertyIndexes: 12185c6611185c66
+  operationPerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875
+  operationPerPropertyOperations: 000000000000000000000000000000000000000000000000
+  specificValuePerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875
   specificValuePerPropertyValues:
+  - 
+  - 
+  - 
+  - 
   - 
   - 
 --- !u!114 &1639391304

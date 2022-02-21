@@ -11,8 +11,7 @@
 %invader01Sensor(invader01,objectIndex(Index),intPair(y(Value))).
 %missileSensor(missile,objectIndex(Index),intPair(x(Value))).
 %missileSensor(missile,objectIndex(Index),intPair(y(Value))).
-%laserSensor(laser,objectIndex(Index),intPair(x(Value))).
-%laserSensor(laser,objectIndex(Index),intPair(y(Value))).
+%missileSensor(missile,objectIndex(Index),projectile(increaseFactor(Value))).
 %bunkerSensor012(bunker,objectIndex(Index),intPair(x(Value))).
 %bunkerSensor012(bunker,objectIndex(Index),intPair(y(Value))).
 %bunkerSensor01(bunker,objectIndex(Index),intPair(x(Value))).
@@ -23,7 +22,9 @@
 %bunkerSensor0(bunker,objectIndex(Index),intPair(y(Value))).
 %invadersSensor(invaders,objectIndex(Index),invaders(direction(x(Value)))).
 %invadersSensor(invaders,objectIndex(Index),invaders(increaseFactor(Value))).
-%For ASP programs:
+%laserSensor(laser,objectIndex(Index),intPair(x(Value))).
+%laserSensor(laser,objectIndex(Index),intPair(y(Value))).
+%laserSensor(laser,objectIndex(Index),projectile(increaseFactor(Value))).
 % Predicates for Action invokation.
 % applyAction(OrderOfExecution,ActionClassName).
 % actionArgument(ActionOrder,ArgumentName, ArgumentValue).
