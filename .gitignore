@@ -69,3 +69,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Assets/StreamingAssets/unity_matrix.txt.meta
+/Assets/StreamingAssets/unity_matrix.txt
+/Assets/StreamingAssets/outputError.txt.meta
+/Assets/StreamingAssets/outputError.txt
+/Assets/StreamingAssets/input_test.lp.meta
+/Assets/StreamingAssets/input_test.lp
+/Assets/Resources/PlannerBrainTemplateThinkEngineUtilityPlanner1.asp
+/Assets/Resources/PlannerBrainTemplatePlayerPlanner1.asp
+/Assets/Resources/PlannerBrainTemplateMysteryShipPlanner1.asp
+/Assets/Scripts/MoveAction.cs.meta
