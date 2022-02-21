@@ -5,11 +5,13 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public Projectile laserPrefab;
     public System.Action killed;
+
+    int increaseFactor;
     public bool laserActive { get; private set; }
 
     private void Update()
     {
-
+        increaseFactor = (int)Time.deltaTime * 5 * 1000;
         string move = "";
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             move = "right";
