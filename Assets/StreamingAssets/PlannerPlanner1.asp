@@ -15,10 +15,14 @@ invaders_direction("right"):-invadersSensor(_,_,invaders(direction(x("1")))).
 invaders_direction("left"):-invadersSensor(_,_,invaders(direction(x("-1")))).
 invaders_move_speed(X):-invadersSensor(_,_,invaders(increaseFactor(X))).
 
-bunker(X,Y):-bunkerSensor(ID,objectIndex(Index),intPair(x(X))),bunkerSensor(ID,objectIndex(Index),intPair(y(Y))).
-bunker(X,Y):-bunkerSensor0(ID,objectIndex(Index),intPair(x(X))),bunkerSensor0(ID,objectIndex(Index),intPair(y(Y))).
-bunker(X,Y):-bunkerSensor01(ID,objectIndex(Index),intPair(x(X))),bunkerSensor01(ID,objectIndex(Index),intPair(y(Y))).
-bunker(X,Y):-bunkerSensor012(ID,objectIndex(Index),intPair(x(X))),bunkerSensor012(ID,objectIndex(Index),intPair(y(Y))).
+
+%bunkerSensor0(bunker,objectIndex(Index),).
+%bunkerSensor0(bunker,objectIndex(Index),bunker(xRight(Value))).
+
+bunker(X,Y):-bunkerSensor(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor(ID,objectIndex(Index),bunker(xRight(Y))).
+bunker(X,Y):-bunkerSensor0(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor0(ID,objectIndex(Index),bunker(xRight(Y))).
+bunker(X,Y):-bunkerSensor01(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor01(ID,objectIndex(Index),bunker(xRight(Y))).
+bunker(X,Y):-bunkerSensor012(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor012(ID,objectIndex(Index),bunker(xRight(Y))).
 missile(X,Y,S,0):-missileSensor(ID,objectIndex(Index),intPair(x(X))),missileSensor(ID,objectIndex(Index),intPair(y(Y))),missileSensor(ID,objectIndex(Index),projectile(increaseFactor(S))).
 
 % MAX PLAN LENGTH
@@ -61,11 +65,16 @@ min_y_invader(Y,T) :- #min{C: invaders(_,C,T)}=Y, invaders(_,_,T).
 nearest_y_invader(X,Y,T) :- #min{C: invaders(C,Y,T)}=X, min_y_invader(Y,T).
 invaders_near_player(T) :- invaders(_,Y1,T), player(_,Y2,T), Y1>=Y2, Y1-Y2<=12000.
 
+% DO NOT FIRE IF THERE IS ALREADY AN ACTIVE LASER 
+% CREATE A NEW LASER AT TIME T IF YOU FIRE AT TIME T. LASER POSITION START AT PLAYER POSITION
+%laser(X,Y,150,T):-player(X,Y,T), applyAction(T,"FireAction").
+%:-applyAction(T_Next,"FireAction"), laser(_,_,_,T), T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
+:-applyAction(T1,"FireAction"), applyAction(T2,"FireAction"), T2>T1+1.
 
 % STRATEGIA DI MOVIMENTO
 % NON ANDARE IN PUNTI ESTREMI (DESTRA/SINISTRA) DOVE NON CI SONO INVADERS
-:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,_,T), most_left_invader(X2,T), X1<=X2+1000, T_Next=T+1.
-:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,T), X1>=X2-1000, T_Next=T+1.
+:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,_,T), most_left_invader(X2,T), X1<=X2+700, T_Next=T+1.
+:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,T), X1>=X2-700, T_Next=T+1.
 
 % SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù A SINISTRA (AD INIZIO GIOCO)
 %:~not invaders_near_player(T), player(X1,_,T), most_left_invader(X2,T), X=X2-X1, X2>X1. [X@4,X1,X2]
@@ -75,18 +84,19 @@ distance_left_column(X,T) :- not invaders_near_player(T), player(X1,_,T), most_l
 % SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù BASSE QUANDO GLI INVADERS SONO VICINISSIMI AL PLAYER (IN ALTEZZA)
 %:~invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X2>X1. [X@4,X1,X2,T]
 distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X1-X2, X1>=X2.
+distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X1<X2.
 :~distance_player_invader(X,T). [X@4,X,T]
 
 % PREFERISCI SPOSTAMENTI CONTRARI RISPETTO LA DIREZIONE DEGLI INVADERS
 %:~actionArgument(_,"move",M), invaders_direction(M). [1@3,M]
 
 % PREFERISCI SPOSTAMENTI CONTINUI NELLA STESSA DIREZIONE
-:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2>T1, M1!=M2. [1@3,T1,M1,T2,M2]
+:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2>T1, M1!=M2. [1@5,T1,M1,T2,M2]
 
 
 % DIFESA
 % PREFERISCI SPOSTARTI SE TI STANNO SPARANDO E NON TI TROVI SOTTO UN BUNKER
-:~applyAction(T_Next,"FireAction"), missile(X1,Y1,_,T), player(X2,Y2,T), not bunker(X2,Y2), X1-1100<=X2, X2<=X1+1100, Y2<=Y1+8000, T_Next=T+1. [1@7,T,X1,X2,Y1,Y2]
+%:~applyAction(T_Next,"FireAction"), missile(X1,Y1,_,T), player(X2,Y2,T), not bunker(X_Left,X_Right), X2>=X_Left, X2<=X_Right, Y2<=Y1+8000, T_Next=T+1. [1@7,T,X1,X2,Y1,Y2]
 
 % NON SPARARE A VUOTO
 %:~applyAction(T_Next,"FireAction"), invaders(X,Y,T), y(Y), player(X,_,T), T_Next=T+1. [1@7,X,Y,T]
@@ -94,9 +104,8 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 %no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, player(X,_,T).
 %:~applyAction(T_Next,"FireAction"), player(X,_,T), no_invaders_in_columns(X,T), T_Next=T+1. [1@5,T_Next,X,T]
 
-
 % NON SPARARE AI BUNKER
-:~applyAction(T_Next,"FireAction"), player(X,_,T), bunker(X,_), T_Next=T+1. [1@5,X,T]
+:~applyAction(T_Next,"FireAction"), player(X,_,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right, T_Next=T+1. [1@7,X,T,X_Left,X_Right]
 
 a.
 :~a. [1@1]
@@ -109,13 +118,14 @@ a.
 
 % ATTACCO
 % SPARA SE SEI SOTTO UN INVADERS
-%:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@6,X,T]
-%:~applyAction(T_Next,"MoveAction"), invaders(X1,_,T), player(X2,_,T), T_Next=T+1, X1>X2-500. [1@6,T,X1,X2]
+:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@6,X,T]
+:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), invaders(X1,_,T), player(X2,_,T), T_Next=T+1. [1@6,T,X1,X2]
 
 
 
 #show applyAction/2. 
 #show actionArgument/3.
+%#show nearest_y_invader/3.
 %#show missile/4.
 %#show invaders/3.
 %#show distance_player_invader/2.
