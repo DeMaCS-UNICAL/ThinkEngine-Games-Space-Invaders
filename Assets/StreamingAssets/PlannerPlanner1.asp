@@ -27,8 +27,7 @@ missile(X_Left,X_Right,Y,S,0):-missileSensor(ID,objectIndex(Index),projectile(xL
 
 
 % MAX PLAN LENGTH
-maxTime(3).
-%y(-20000..20000).
+maxTime(5).
 min_x_matrix(-14000).
 max_x_matrix(14000).
 action("MoveAction").
@@ -36,8 +35,7 @@ move("left").
 move("right").
 action("FireAction").
 
-% ELABORAZIONE DEL PIANO
-%% TIME STEP 0
+% START PLANNING
 1<={applyAction(0,A) : action(A)}<=1.
 1<={actionArgument(0,"move",M) : move(M)}<=1 :- applyAction(0,"MoveAction").
 
@@ -96,16 +94,17 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X1<X2.
 :~distance_player_invader(X,T). [X@4,X,T]
 
-% AUMENTA LA FREQUENZA DI FUOCO QUANDO GLI INVADERS SONO VICINI AL PLAYER
-%:~applyAction(T, "MoveAction"), invaders_near_player(T). [10@6,T]
-
-% PREFERISCI SPOSTAMENTI CONTRARI RISPETTO LA DIREZIONE DEGLI INVADERS
-:~actionArgument(_,"move",M), invaders_direction(M). [1@3,M]
-
 % PREFERISCI SPOSTAMENTI CONTINUI NELLA STESSA DIREZIONE
 :~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2=T1+1, M1!=M2. [1@5,T1,M1,T2,M2]
 :~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T1=T2+1, M1!=M2. [1@5,T1,M1,T2,M2]
 :~actionArgument(T1,"move",M1), previous_direction(M2), M1!=M2. [1@4,M1,M2,T1]
+
+% PREFERISCI SPOSTAMENTI CONTRARI RISPETTO LA DIREZIONE DEGLI INVADERS
+:~actionArgument(_,"move",M), invaders_direction(M). [1@3,M]
+
+% AUMENTA LA FREQUENZA DI FUOCO QUANDO GLI INVADERS SONO VICINI AL PLAYER
+%:~applyAction(T, "MoveAction"), invaders_near_player(T). [10@6,T]
+
 
 %:~applyAction(T,"FireAction"). [1@100,T]
 % ATTACCO
@@ -118,13 +117,14 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right.
 :~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right, Y2<=Y1+8000, T_Next=T+1. [1@7,T,Y1,Y2]
 
+% NON SPARARE AI BUNKER - SE GLI AVVERSARI SONO MOLTO VICINI SPARA LO STESSO
+:~applyAction(T_Next,"FireAction"), player(X,_,T), not invaders_near_player(T_Next), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right, T_Next=T+1. [1@4,X,T,X_Left,X_Right,T_Next]
+:~applyAction(T,"FireAction"), player(X,_,T), not invaders_near_player(T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right. [1@4,X,T,X_Left,X_Right]
+
 % NON SPARARE A VUOTO
 %no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, player(X,_,T).
 %:~applyAction(T_Next,"FireAction"), player(X,_,T), no_invaders_in_columns(X,T), T_Next=T+1. [1@6,T_Next,X,T]
 
-% NON SPARARE AI BUNKER - SE GLI AVVERSARI SONO MOLTO VICINI SPARA LO STESSO
-:~applyAction(T_Next,"FireAction"), player(X,_,T), not invaders_near_player(T_Next), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right, T_Next=T+1. [1@4,X,T,X_Left,X_Right,T_Next]
-:~applyAction(T,"FireAction"), player(X,_,T), not invaders_near_player(T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right. [1@4,X,T,X_Left,X_Right]
 
 a.
 :~a. [1@1]
@@ -140,7 +140,7 @@ a.
 
 #show applyAction/2. 
 #show actionArgument/3.
-#show previous_direction/1.
+%#show previous_direction/1.
 %#show nearest_y_invader/3.
 %#show missile/5.
 %#show invaders/3.
