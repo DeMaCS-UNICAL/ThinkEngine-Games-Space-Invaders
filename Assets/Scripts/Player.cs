@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         // Only one laser can be active at a given time so first check that
         // there is not already an active laser
-        if (!laserActive)
+        if (!laserActive || GameObject.Find("Laser(Clone)") == null)
         {
             laserActive = true;
 

@@ -9,8 +9,11 @@ public class Bunker : MonoBehaviour
     public SpriteRenderer spriteRenderer { get; private set; }
     public new BoxCollider2D collider { get; private set; }
 
+    public int xLeft, xRight;
     private void Awake()
     {
+        xLeft = (int)(transform.position.x*1000 - 1300);
+        xRight = (int)(transform.position.x*1000 + 1300);
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
         originalTexture = spriteRenderer.sprite.texture;
