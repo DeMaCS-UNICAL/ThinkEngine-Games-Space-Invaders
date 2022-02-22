@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     public new BoxCollider2D collider { get; private set; }
     
     public int increaseFactor;
+    public int xLeft, xRight;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
+        xLeft = (int)(transform.position.x * 1000 - 1000);
+        xRight = (int)(transform.position.x * 1000 + 1000);
         increaseFactor = (int)((direction * speed * Time.deltaTime).y*1000);
         transform.position += direction * speed * Time.deltaTime;
     }

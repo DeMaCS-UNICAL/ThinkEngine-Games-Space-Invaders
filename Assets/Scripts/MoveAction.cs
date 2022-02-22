@@ -9,6 +9,7 @@ public class MoveAction : Action
     public override void Do()
     {
         // Player myPlayer = FindObjectOfType<Player>();
+        FindObjectOfType<Player>().previousDirection = move;
         FindObjectOfType<Player>().Move(move);
     }
 

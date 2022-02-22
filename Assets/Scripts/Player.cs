@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public System.Action killed;
 
     public int increaseFactor;
+    public string previousDirection = "left";
     public bool laserActive { get; private set; }
 
     private void Update()

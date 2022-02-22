@@ -1895,6 +1895,7 @@ MonoBehaviour:
   speed: 5
   laserPrefab: {fileID: 33052392596605686, guid: 8cca1da190961a842b34231aade647ef, type: 3}
   increaseFactor: 0
+  previousDirection: left
 --- !u!114 &1639391303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,6 +1933,10 @@ MonoBehaviour:
   - myStrings:
     - Player
     Count: 1
+  - myStrings:
+    - Player
+    - previousDirection
+    Count: 2
   _toMapProperties:
   - myStrings:
     - IntPair
@@ -1945,11 +1950,16 @@ MonoBehaviour:
     - Player
     - increaseFactor
     Count: 2
+  - myStrings:
+    - Player
+    - previousDirection
+    Count: 2
   _configurationName: playerSensor
-  operationPerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875
-  operationPerPropertyOperations: 000000000000000000000000000000000000000000000000
-  specificValuePerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875
+  operationPerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875b6ed2866
+  operationPerPropertyOperations: 00000000000000000000000000000000000000000000000000000000
+  specificValuePerPropertyIndexes: 12185c6611185c665a62cf6f9b7f87de60e93d2051b9d875b6ed2866
   specificValuePerPropertyValues:
+  - 
   - 
   - 
   - 
