@@ -29,6 +29,9 @@ public class Projectile : MonoBehaviour
         xRight = (int)(transform.position.x * 1000 + 1000);
         increaseFactor = (int)((direction * speed * Time.deltaTime).y*1000);
         transform.position += direction * speed * Time.deltaTime;
+        
+        if (transform.position.y >= 15)
+            Destroy(gameObject);
     }
 
     private void CheckCollision(Collider2D other)

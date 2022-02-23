@@ -110,8 +110,8 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 
 % ATTACK
 % FIRE WHEN THERE IS AN INVADER UP TO THE PLAYER
-%:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@6,X,T]
-%:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), invaders(X1,_,T), player(X2,_,T), T_Next=T+1. [1@6,T,X1,X2]
+:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@6,X,T]
+:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), nearest_y_invader(X1,_,T), player(X2,_,T), T_Next=T+1. [1@6,T,X1,X2]
 
 % DEFEND
 % IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
@@ -126,6 +126,15 @@ player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X
 %no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, player(X,_,T).
 %:~applyAction(T_Next,"FireAction"), player(X,_,T), no_invaders_in_columns(X,T), T_Next=T+1. [1@6,T_Next,X,T]
 
+a.
+:~a. [1@1]
+:~a. [1@2]
+:~a. [1@3]
+:~a. [1@4]
+:~a. [1@5]
+:~a. [1@6]
+:~a. [1@7]
+:~a. [1@8]
 
 #show applyAction/2. 
 #show actionArgument/3.

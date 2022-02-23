@@ -99,7 +99,7 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 % ATTACK
 % FIRE WHEN THERE IS AN INVADER UP TO THE PLAYER
 :~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@4,X,T]
-:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), invaders(X1,_,T), player(X2,_,T), T_Next=T+1. [1@4,T,X1,X2]
+:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), nearest_y_invader(X1,_,T), player(X2,_,T), T_Next=T+1. [1@4,T,X1,X2]
 
 % DEFEND
 % IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
