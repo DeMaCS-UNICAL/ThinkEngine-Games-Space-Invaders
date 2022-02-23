@@ -7,7 +7,14 @@ public class Trigger:ScriptableObject
 {
     bool RunReasoner()
     {
-        if (GameObject.Find("Planner").GetComponent<Scheduler>().ResidualActions < 3)
+        return !ChangePlan();
+//        if (GameObject.Find("Planner").GetComponent<Scheduler>().ResidualActions < 3)
+//            return true;
+//        return false;
+    }
+    bool ChangePlan()
+    {
+        if (FindObjectOfType<Invaders>() != null && FindObjectOfType<Invaders>().AmountAlive <= FindObjectOfType<Invaders>().TotalAmount / 2)
             return true;
         return false;
     }

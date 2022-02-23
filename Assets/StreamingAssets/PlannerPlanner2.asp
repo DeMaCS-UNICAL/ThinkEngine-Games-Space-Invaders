@@ -1,9 +1,3 @@
-% For ASP programs:
-% Predicates for Action invokation.
-% applyAction(OrderOfExecution,ActionClassName).
-% actionArgument(ActionOrder,ArgumentName, ArgumentValue).
-
-
 player(X,Y,0):-playerSensor(ID,objectIndex(Index),intPair(x(X))),playerSensor(ID,objectIndex(Index),intPair(y(Y))).
 player_move_speed(X):-playerSensor(_,_,player(increaseFactor(X))).
 laser(X,Y,S,0):-laserSensor(ID,objectIndex(Index),intPair(x(X))),laserSensor(ID,objectIndex(Index),intPair(y(Y))),laserSensor(ID,objectIndex(Index),projectile(increaseFactor(S))).
@@ -27,7 +21,7 @@ missile(X_Left,X_Right,Y,S,0):-missileSensor(ID,objectIndex(Index),projectile(xL
 
 
 % MAX PLAN LENGTH
-maxTime(5).
+maxTime(10).
 min_x_matrix(-14000).
 max_x_matrix(14000).
 action("MoveAction").
@@ -59,7 +53,6 @@ missile(X_Left,X_Right,Y_Next,S,T_Next) :- missile(X_Left,X_Right,Y,S,T), Y_Next
 
 % ESTIMATE LASER'S FUTURE POSITION 
 laser(X,Y_Next,S,T_Next) :- laser(X,Y,S,T), Y_Next=Y+S, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
-% CREATE A NEW LASER AT TIME T IF YOU FIRE AT TIME T. LASER POSITION START AT PLAYER POSITION
 laser(X,Y,200,T):-player(X,Y,T), applyAction(T,"FireAction").
 
 % FIND ALL ENEMIES ON THE MOST LEFT/RIGHT COLUMN 
@@ -80,82 +73,39 @@ invaders_near_player(T) :- invaders(_,Y1,T), player(_,Y2,T), Y1>=Y2, Y1-Y2<=1200
 :-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,_,T), most_left_invader(X2,T), X1<=X2+100, T_Next=T+1.
 :-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,T), X1>=X2-100, T_Next=T+1.
 
-
-
 %%%%%%%%%%% WEAK CONSTRAINTS %%%%%%%%%%%
 
 %%%%%%%%%%% UPDATE STRATEGY DEPENDING ON INVADERS HEIGHT %%%%%%%%%%%
 % SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù A SINISTRA (AD INIZIO GIOCO)
 distance_left_column(X,T) :- not invaders_near_player(T), player(X1,_,T), most_left_invader(X2,T), X=X1-X2, X1>=X2.
 distance_left_column(X,T) :- not invaders_near_player(T), player(X1,_,T), most_left_invader(X2,T), X=X2-X1, X1<X2.
-:~distance_left_column(X,T). [X@4,T]
+:~distance_left_column(X,T). [X@2,T]
 
 % SE POSSIBILE SPOSTATI VERSO UN INVADERS DELLE FILE PIù BASSE QUANDO GLI INVADERS SONO VICINISSIMI AL PLAYER (IN ALTEZZA)
 distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X1-X2, X1>=X2.
 distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest_y_invader(X2,_,T), X=X2-X1, X1<X2.
-:~distance_player_invader(X,T). [X@4,X,T]
+:~distance_player_invader(X,T). [X@2,X,T]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 % WHEN MOVE, PREFER THE SAME DIRECTION OF PREVIOUS ACTIONS (AVOID LEFT AND RIGHT CONTINUOUS MOVE) 
-:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2=T1+1, M1!=M2. [1@5,T1,M1,T2,M2]
-:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T1=T2+1, M1!=M2. [1@5,T1,M1,T2,M2]
-:~actionArgument(T1,"move",M1), previous_direction(M2), M1!=M2. [1@4,M1,M2,T1]
+:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T2=T1+1, M1!=M2. [1@3,T1,M1,T2,M2]
+:~actionArgument(T1,"move",M1), actionArgument(T2,"move",M2), T1=T2+1, M1!=M2. [1@3,T1,M1,T2,M2]
+:~actionArgument(T1,"move",M1), previous_direction(M2), M1!=M2. [1@2,M1,M2,T1]
 
 % WHEN MOVE, GO TOWARDS INVADERS
-:~actionArgument(_,"move",M), invaders_direction(M). [1@3,M]
-
-% AUMENTA LA FREQUENZA DI FUOCO QUANDO GLI INVADERS SONO VICINI AL PLAYER
-%:~applyAction(T, "MoveAction"), invaders_near_player(T). [10@6,T]
-
+:~actionArgument(_,"move",M), invaders_direction(M). [1@1,M]
 
 % ATTACK
 % FIRE WHEN THERE IS AN INVADER UP TO THE PLAYER
-%:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@6,X,T]
-%:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), invaders(X1,_,T), player(X2,_,T), T_Next=T+1. [1@6,T,X1,X2]
+:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T), player(X,_,T), T_Next=T+1. [1@4,X,T]
+:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), invaders(X1,_,T), player(X2,_,T), T_Next=T+1. [1@4,T,X1,X2]
 
 % DEFEND
 % IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
 player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right.
-:~applyAction(T_Next,"FireAction"), actionArgument(T_Next,"move", "right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right, T_Next=T+1. [1@7,T,Y1,Y2]
-
-% DO NOT FIRE TO BUNKER WHEN AT BEGINNING OF THE GAME. IF INVADERS ARE NEAR TO THE PLAYER IGNORE THIS WEAK
-:~applyAction(T_Next,"FireAction"), player(X,_,T), not invaders_near_player(T_Next), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right, T_Next=T+1. [1@4,X,T,X_Left,X_Right,T_Next]
-:~applyAction(T,"FireAction"), player(X,_,T), not invaders_near_player(T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right. [1@4,X,T,X_Left,X_Right]
-
-% DO NOT FIRE IF NO INVADERS ARE ON YOUR SAME COLUMN
-%no_invaders_in_columns(X,T) :- #count{Y: invaders(X,Y,T)}=0, player(X,_,T).
-%:~applyAction(T_Next,"FireAction"), player(X,_,T), no_invaders_in_columns(X,T), T_Next=T+1. [1@6,T_Next,X,T]
+:~applyAction(T_Next,"FireAction"), actionArgument(T_Next,"move", "right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,Y1,Y2]
 
 
 #show applyAction/2. 
 #show actionArgument/3.
-%#show previous_direction/1.
-%#show nearest_y_invader/3.
-%#show missile/5.
-%#show invaders/3.
-%#show distance_player_invader/2.
-%#show min_y_invader/2.
-%#show invaders_move_speed/1.
-%#show laser/4.
-%#show player_under_bunker/1.
-%#show player/3.
-%#show invadersSensor/3.
-%#show bunker/2.
-%#show nearest_y_invader/3.
-%#show invaders_near_player/1.
-%#show no_invaders_in_columns/2.
-
-
-% STRATEGY:
-% 1. DISTRUGGI PRIMA I NEMICI PER COLONNE PARTENDO DALLA SINISTRA --> SE LE COLONNE DIMINUISCONO, CI 
-    % VOGLIONO PIù STEP PRIMA CHE POSSANO SCENDERE DI LIVELLO
-% 2. DISTRUGGI I NEMICI SULLE RIGHE PIù IN BASSO
-% 3. NON SPARARE SE SEI SOTTO UN BUNKER
-% 4. NON SPARARE SE NON CI SONO NEMICI SOPRA DI TE (NON SPARARE A VUOTO)
-% 5. SE TI TROVI SOTTO UN NEMICO è PREFERIBILE SPARARE 
-% 6. QUANDO TI SPOSTI, CERCA DI SPOSTARTI VERSO I NEMICI DELLE FILE PIù IN BASSO O VERSO LE PRIME COLONNE
-
-% SE IL NEMICO SI TROVA A 5 CELLE Y DA TE, è PREFERIBILE SPARARE A QUELLI PIù VICINI
-
-% PROBLEMI DURANTE LA PIANIFICAZIONE PERCHè IL QUANDO CALCOLO LE FUTURE POSIZIONI DEL PLAYER CON LA CONVERSIONE DA FLOAT A INT
-% HO GRAVI PERDITE: PER ME OGNI VOLTA CHE MI MUOVO MI TROVO IN UN POSIZIONE X_NEXT=X+1, NEL GIOCO CI SI SPOSTA DI +1 OGNI ~31 MOVE NELLA STESSA DIREZIONE!!!
