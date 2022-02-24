@@ -6,6 +6,8 @@ using UnityEngine;
 public class MoveAction : Action
 {
     string move { get; set; }
+    public bool emergency { get; set; }
+
     public override void Do()
     {
         // Player myPlayer = FindObjectOfType<Player>();
@@ -20,20 +22,13 @@ public class MoveAction : Action
 
     public override State Prerequisite()
     {
-        //State must be returned using State.WAIT|State.ABORT|State.READY
-        if (FindObjectOfType<Player>() == null)
-        {
-//            Debug.Log("MOVE - ABORT");
+        if (emergency && GameObject.Find("Missile(Clone)") == null)
             return State.ABORT;
-        }
-        /*
-        if (!belongingTO.IsExecuting && GameObject.Find("Planner").GetComponent<PlannerBrainsCoordinator>().priorityExecuting == belongingTO.priority)
-        {
-            Debug.Log("MOVE - WAIT");
-            return State.WAIT;
-        }
-        */
-//        Debug.Log("MOVE - READY");
+
+        Player myPlayer = FindObjectOfType<Player>();
+        if (myPlayer == null)
+            return State.ABORT;
+
         return State.READY;
     }
 }

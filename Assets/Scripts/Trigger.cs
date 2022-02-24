@@ -19,4 +19,14 @@ public class Trigger:ScriptableObject
         return false;
     }
 
+    bool EmergencyPlan()
+    {
+        Player myPlayer = FindObjectOfType<Player>();
+        GameObject missile = GameObject.Find("Missile(Clone)");
+        if (missile != null && myPlayer != null && System.Math.Abs(missile.transform.position.x - myPlayer.transform.position.x) <
+            myPlayer.GetComponent<BoxCollider2D>().size.x && FindObjectOfType<PlannerBrainsCoordinator>().priorityExecuting!=1)
+            return true;
+        return false;
+    }
+
 }

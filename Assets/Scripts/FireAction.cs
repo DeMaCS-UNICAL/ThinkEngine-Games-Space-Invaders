@@ -1,6 +1,4 @@
 using Planner;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireAction : Action
@@ -18,23 +16,12 @@ public class FireAction : Action
     public override State Prerequisite()
     {
         // RECOMPUTE PLAN WHEN:
-            // 1.ENEMIES DIRECTION CHANGES
-            // 2.ENEMY KILLED
-
-        //State must be returned using State.WAIT|State.ABORT|State.READY
-        if (FindObjectOfType<Player>() == null)
-        {
-//            Debug.Log("FIRE - ABORT");
+        // 1.ENEMIES DIRECTION CHANGES
+        // 2.ENEMY KILLED
+        Player myPlayer = FindObjectOfType<Player>();
+        if (myPlayer == null) 
             return State.ABORT;
-        }
-        /*
-        if (!belongingTO.IsExecuting && GameObject.Find("Planner").GetComponent<PlannerBrainsCoordinator>().priorityExecuting == belongingTO.priority)
-        {
-            Debug.Log("FIRE - WAIT");
-            return State.WAIT;
-        }
-        */
-//        Debug.Log("FIRE - READY");
-        return State.READY;
+
+            return State.READY;
     }
 }
