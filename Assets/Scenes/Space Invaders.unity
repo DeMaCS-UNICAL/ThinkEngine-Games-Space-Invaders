@@ -609,6 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
 --- !u!1 &797358150
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +869,7 @@ MonoBehaviour:
   AIFilesPrefix: PlannerPlanner2
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner2.asp
   prefabBrain: 0
-  _executeReasonerOn: RunReasoner
+  _executeReasonerOn: When Sensors are ready
   specificAIFile: 0
   globalAIFile: 0
   _priority: 1
@@ -884,7 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableBrain: 1
-  debug: 0
+  debug: 1
   maintainInputFile: 0
   _chosenSensorConfigurations:
   - playerSensor
@@ -1264,6 +1266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
 --- !u!1 &1154390489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,6 +1810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
 --- !u!1 &1639391297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
 --- !u!1 &1660341574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
 --- !u!1 &1773838785
 GameObject:
   m_ObjectHideFlags: 0

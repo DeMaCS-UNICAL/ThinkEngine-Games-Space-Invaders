@@ -5,6 +5,8 @@ public class FireAction : Action
 {
     public override void Do()
     {
+        Player myPlayer = FindObjectOfType<Player>();
+        myPlayer.Move(myPlayer.previousDirection);
         FindObjectOfType<Player>().Shoot();
     }
 

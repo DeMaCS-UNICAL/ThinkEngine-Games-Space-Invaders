@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class MoveAction : Action
 {
-    string move { get; set; }
+    public string move { get; set; }
     public bool emergency { get; set; }
+    public int xNext { get; set; }
 
     public override void Do()
     {
@@ -22,12 +23,15 @@ public class MoveAction : Action
 
     public override State Prerequisite()
     {
-        if (emergency && GameObject.Find("Missile(Clone)") == null)
-            return State.ABORT;
-
         Player myPlayer = FindObjectOfType<Player>();
         if (myPlayer == null)
             return State.ABORT;
+
+        if (emergency && GameObject.Find("Missile(Clone)") == null)
+            return State.ABORT;
+
+        if (!emergency && System.Math.Abs(xNext-myPlayer.GetComponent<IntPair>().x) < 100)
+            return State.WAIT;
 
         return State.READY;
     }

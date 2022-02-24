@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IntPair : MonoBehaviour
 {
-    int x;
-    int y;
+    public int x;
+    public int y;
     private void Update()
     {
         x = (int)(transform.position.x*1000);

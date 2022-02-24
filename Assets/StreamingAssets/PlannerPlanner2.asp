@@ -56,6 +56,12 @@ player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"MoveAction"), actionArg
 player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"MoveAction"), actionArgument(T,"move","left"), player_move_speed(S), X_Next=X-S, X_Next>=X_Min, min_x_matrix(X_Min), T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 player(X,Y,T_Next) :- player(X,Y,T), applyAction(T,"FireAction"), T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 
+%player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"FireAction"), player_move_speed(S), X_Next=X+S, X_Next<=X_Max, max_x_matrix(X_Max), actionArgument(T_Prev,"move", "right"), T_Prev=T-1, T_Prev>=0, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
+%player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"FireAction"), player_move_speed(S), X_Next=X-S, X_Next>=X_Min, min_x_matrix(X_Min), actionArgument(T_Prev,"move", "left"), T_Prev=T-1, T_Prev>=0, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
+
+actionArgument(T,"xNext",X_Next) :- player(X_Next,_,T), not applyAction(T,"FireAction").
+
+
 % ESTIMATE MISSILE'S FUTURE POSITION 
 missile(X_Left,X_Right,Y_Next,S,T_Next) :- missile(X_Left,X_Right,Y,S,T), Y_Next=Y+S, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 
@@ -142,6 +148,9 @@ a.
 
 #show applyAction/2. 
 #show actionArgument/3.
+#show player/3.
+#show player_move_speed/1.
+
 %#show invaders_direction/1.
 %#show previous_direction/1.
 %#show distance_right_column/2.
