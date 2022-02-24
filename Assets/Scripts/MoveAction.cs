@@ -31,7 +31,7 @@ public class MoveAction : Action
             return State.ABORT;
 
         if (!emergency && System.Math.Abs(xNext-myPlayer.GetComponent<IntPair>().x) < 100)
-            return State.WAIT;
+            return State.SKIP;
 
         return State.READY;
     }
