@@ -119,8 +119,8 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 % IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
 player_under_missile(X,Y,T) :- missile(X_Left,X_Right,_,_,T), player(X,Y,T), X>=X_Left, X<=X_Right,T_Next=T+1.
 player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right.
-:~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,T_Next,Y1,Y2,X_Left,X_Right]
-:~actionArgument(T_Next,"move","right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@6,T,T_Next,Y1,Y2,X_Left,X_Right]
+%:~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,T_Next,Y1,Y2,X_Left,X_Right]
+%:~actionArgument(T_Next,"move","right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@6,T,T_Next,Y1,Y2,X_Left,X_Right]
 
 % DO NOT FIRE TO BUNKER WHEN AT BEGINNING OF THE GAME. IF INVADERS ARE NEAR TO THE PLAYER IGNORE THIS WEAK
 :~applyAction(T_Next,"FireAction"), player(X,_,T), not invaders_near_player(T_Next), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right, T_Next=T+1. [1@4,X,T,X_Left,X_Right,T_Next]

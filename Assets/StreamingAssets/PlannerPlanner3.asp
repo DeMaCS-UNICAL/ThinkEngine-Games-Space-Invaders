@@ -116,8 +116,8 @@ player_under_invader(T) :- player(X,_,T), invaders(X,_,T).
 % IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
 player_under_missile(X,Y,T) :- missile(X_Left,X_Right,_,_,T), player(X,Y,T), X>=X_Left, X<=X_Right,T_Next=T+1.
 player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right.
-:~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,T_Next,Y1,Y2,X_Left,X_Right]
-:~actionArgument(T_Next,"move","right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@6,T,T_Next,Y1,Y2,X_Left,X_Right]
+%:~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,T_Next,Y1,Y2,X_Left,X_Right]
+%:~actionArgument(T_Next,"move","right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@6,T,T_Next,Y1,Y2,X_Left,X_Right]
 
 a.
 :~a. [1@1]

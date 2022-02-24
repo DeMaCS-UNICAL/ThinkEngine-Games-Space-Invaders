@@ -884,8 +884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableBrain: 1
-  debug: 1
-  maintainInputFile: 1
+  debug: 0
+  maintainInputFile: 0
   _chosenSensorConfigurations:
   - playerSensor
   - missileSensor
