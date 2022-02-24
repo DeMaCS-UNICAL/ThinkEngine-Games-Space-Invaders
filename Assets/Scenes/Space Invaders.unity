@@ -2231,6 +2231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773838787}
   - component: {fileID: 1773838786}
+  - component: {fileID: 1773838788}
   m_Layer: 0
   m_Name: ThinkEngineUtility
   m_TagString: Untagged
@@ -2251,9 +2252,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MIN_AVG_FPS: 60
-  MIN_CURRENT_FPS: 20
-  MAX_AVG_FPS: 70
-  MAX_CURRENT_FPS: 40
+  MIN_CURRENT_FPS: 50
+  MAX_AVG_FPS: 170
+  MAX_CURRENT_FPS: 170
 --- !u!4 &1773838787
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,6 +2270,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773838788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773838785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1593125381, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1984502041
 GameObject:
   m_ObjectHideFlags: 0
