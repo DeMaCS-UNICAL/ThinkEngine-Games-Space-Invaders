@@ -30,7 +30,7 @@ public class MoveAction : Action
         if (emergency && GameObject.Find("Missile(Clone)") == null)
             return State.ABORT;
 
-        if (!emergency && System.Math.Abs(xNext-myPlayer.GetComponent<IntPair>().x) < 100)
+        if (!emergency && System.Math.Abs(xNext-myPlayer.GetComponent<IntPair>().x) > 100)
             return State.SKIP;
 
         return State.READY;

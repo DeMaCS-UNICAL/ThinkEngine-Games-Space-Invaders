@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
         increaseFactor = (int)((direction * speed * Time.deltaTime).y*1000);
         transform.position += direction * speed * Time.deltaTime;
         
-        if (transform.position.y >= 15)
+        if (transform.position.y >= 15 || transform.position.y <= -15)
             Destroy(gameObject);
     }
 
