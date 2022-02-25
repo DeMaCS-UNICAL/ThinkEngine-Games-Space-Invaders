@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 33052392596605684}
   - component: {fileID: 33052392596605687}
   - component: {fileID: 33052392596605686}
-  - component: {fileID: 2144636726144433816}
-  - component: {fileID: 6882855723495010375}
-  - component: {fileID: 7170168840301231883}
   m_Layer: 8
   m_Name: Laser
   m_TagString: Untagged
@@ -152,77 +149,5 @@ MonoBehaviour:
   speed: 40
   direction: {x: 0, y: 1, z: 0}
   increaseFactor: 0
---- !u!114 &2144636726144433816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33052392596605683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fa6dfa1dfa24814097d03b5c8bc71f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6882855723495010375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33052392596605683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 417179157, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7170168840301231883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33052392596605683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -508812344, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _savedProperties:
-  - myStrings:
-    - IntPair
-    - x
-    Count: 2
-  - myStrings:
-    - IntPair
-    - y
-    Count: 2
-  - myStrings:
-    - Projectile
-    Count: 1
-  - myStrings:
-    - Projectile
-    - increaseFactor
-    Count: 2
-  _toMapProperties:
-  - myStrings:
-    - IntPair
-    - x
-    Count: 2
-  - myStrings:
-    - IntPair
-    - y
-    Count: 2
-  - myStrings:
-    - Projectile
-    - increaseFactor
-    Count: 2
-  _configurationName: laserSensor
-  operationPerPropertyIndexes: 60cdfd1b12185c6611185c66557526b8
-  operationPerPropertyOperations: 00000000000000000000000000000000
-  specificValuePerPropertyIndexes: 60cdfd1b12185c6611185c66557526b8
-  specificValuePerPropertyValues:
-  - 
-  - 
-  - 
-  - 
+  xLeft: 0
+  xRight: 0

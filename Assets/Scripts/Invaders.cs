@@ -52,7 +52,7 @@ public class Invaders : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(MissileAttack), missileSpawnRate, missileSpawnRate);
+        //InvokeRepeating(nameof(MissileAttack), missileSpawnRate, missileSpawnRate);
     }
 
     private void MissileAttack()
