@@ -29,7 +29,7 @@ missile(X_Left,X_Right,Y,S,0):-missileSensor(ID,objectIndex(Index),projectile(xL
 
 
 % MAX PLAN LENGTH
-maxTime(5).
+maxTime(10).
 min_x_matrix(-15500).
 max_x_matrix(15500).
 action("MoveAction").
