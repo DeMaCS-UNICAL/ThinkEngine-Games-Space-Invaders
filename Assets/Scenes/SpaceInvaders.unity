@@ -819,22 +819,17 @@ MonoBehaviour:
   debug: 0
   maintainInputFile: 0
   _chosenSensorConfigurations:
-  - bunkerSensor01
   - invadersSensor
-  - bunkerSensor
-  - bunkerSensor0
   - playerSensor
-  - bunkerSensor012
   - invader_03Sensor
   - invader_02Sensor
   - invader_01Sensor
-  - missileSensor
   - laserSensor
   AIFilesPath: .\Assets\StreamingAssets\
   AIFilesPrefix: PlannerPlanner3
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner3.asp
   prefabBrain: 0
-  _executeReasonerOn: ChangePlan
+  _executeReasonerOn: OffensivePlan
   specificAIFile: 0
   globalAIFile: 0
   _priority: 2
@@ -857,19 +852,18 @@ MonoBehaviour:
   - bunkerSensor01
   - invadersSensor
   - bunkerSensor
-  - bunkerSensor0
   - invader_03Sensor
   - invader_02Sensor
-  - missileSensor
   - laserSensor
   - bunkerSensor012
   - playerSensor
   - invader_01Sensor
+  - bunkerSensor0
   AIFilesPath: .\Assets\StreamingAssets\
   AIFilesPrefix: PlannerPlanner2
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner2.asp
   prefabBrain: 0
-  _executeReasonerOn: When Sensors are ready
+  _executeReasonerOn: StrategicPlan
   specificAIFile: 0
   globalAIFile: 0
   _priority: 1
