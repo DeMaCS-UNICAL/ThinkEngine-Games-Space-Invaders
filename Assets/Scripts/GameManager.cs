@@ -34,6 +34,10 @@ public sealed class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (lives <= 0 && Input.GetKeyDown(KeyCode.Return)) {
             NewGame();
         }
