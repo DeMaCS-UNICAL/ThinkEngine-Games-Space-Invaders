@@ -5,17 +5,21 @@ using UnityEngine;
 public class SensorsGenerator : MonoBehaviour
 {
     List<int> testingList = new List<int>();
+    List<int> toAdd = new List<int>();
     int count = 0;
     // Update is called once per frame
     private void Start()
     {
-        testingList.Add(1);
+        for (int i = 0; i < 1000; i++)
+        {
+            toAdd.Add(1);
+        }
     }
     void Update()
     {
-        if (++count % 50 ==0 && testingList.Count<100000)
+        if (++count % 250 ==0 && testingList.Count<100000)
         {
-            testingList.AddRange(testingList);
+            testingList.AddRange(toAdd);
         }
     }
 }
