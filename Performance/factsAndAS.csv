@@ -1,671 +1,309 @@
-facts 28.00ms 
-solver 146.00ms 
-facts 3.00ms 
-solver 143.00ms 
-facts 3.00ms 
-solver 110.00ms 
-facts 1.00ms 
-facts 3.00ms 
-solver 124.00ms 
-facts 1.00ms 
-solver 59.00ms 
-facts 2.00ms 
-solver 71.00ms 
-facts 1.00ms 
-solver 66.00ms 
-facts 32.00ms 
-solver 136.00ms 
-facts 3.00ms 
-solver 114.00ms 
-facts 2.00ms 
-solver 100.00ms 
-facts 10.00ms 
-solver 112.00ms 
-facts 3.00ms 
-solver 107.00ms 
-facts 3.00ms 
-solver 111.00ms 
-facts 2.00ms 
-solver 133.00ms 
-facts 3.00ms 
-solver 107.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 118.00ms 
-facts 2.00ms 
-solver 114.00ms 
-facts 3.00ms 
-solver 113.00ms 
-facts 2.00ms 
-solver 121.00ms 
-facts 3.00ms 
-solver 111.00ms 
-facts 2.00ms 
-solver 115.00ms 
-facts 2.00ms 
-solver 95.00ms 
-facts 5.00ms 
-solver 124.00ms 
-facts 3.00ms 
-solver 117.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 102.00ms 
-facts 2.00ms 
-solver 106.00ms 
-facts 2.00ms 
-solver 111.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 118.00ms 
-facts 2.00ms 
-solver 107.00ms 
-facts 2.00ms 
-solver 110.00ms 
-facts 2.00ms 
-facts 1.00ms 
-solver 125.00ms 
-solver 67.00ms 
-facts 1.00ms 
-solver 61.00ms 
-facts 1.00ms 
-solver 64.00ms 
-facts 2.00ms 
-solver 64.00ms 
-facts 2.00ms 
-solver 67.00ms 
-facts 31.00ms 
-solver 126.00ms 
-facts 3.00ms 
-solver 99.00ms 
-facts 3.00ms 
-solver 114.00ms 
-facts 2.00ms 
-solver 107.00ms 
-facts 2.00ms 
-solver 96.00ms 
-facts 2.00ms 
-solver 98.00ms 
-facts 1.00ms 
-solver 105.00ms 
-facts 2.00ms 
-solver 101.00ms 
-facts 2.00ms 
-solver 119.00ms 
-facts 2.00ms 
-solver 115.00ms 
-facts 2.00ms 
-solver 104.00ms 
-facts 2.00ms 
-solver 119.00ms 
-facts 2.00ms 
-solver 104.00ms 
-facts 3.00ms 
-solver 97.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 123.00ms 
-facts 2.00ms 
-solver 213.00ms 
-facts 1.00ms 
-facts 6.00ms 
-solver 147.00ms 
-solver 152.00ms 
-facts 1.00ms 
-facts 2.00ms 
-solver 155.00ms 
-solver 155.00ms 
-facts 2.00ms 
-facts 2.00ms 
-solver 134.00ms 
-solver 133.00ms 
-facts 3.00ms 
-facts 19.00ms 
-solver 139.00ms 
-solver 211.00ms 
-facts 2.00ms 
-solver 120.00ms 
-facts 2.00ms 
-solver 130.00ms 
-facts 2.00ms 
-solver 117.00ms 
-facts 2.00ms 
-solver 103.00ms 
-facts 2.00ms 
-solver 113.00ms 
-facts 2.00ms 
-solver 119.00ms 
-facts 2.00ms 
-solver 99.00ms 
-facts 2.00ms 
-solver 107.00ms 
-facts 2.00ms 
-solver 101.00ms 
-facts 2.00ms 
-solver 127.00ms 
-facts 2.00ms 
-solver 124.00ms 
-facts 2.00ms 
-solver 114.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 104.00ms 
-facts 2.00ms 
-solver 123.00ms 
-facts 2.00ms 
-solver 126.00ms 
-facts 2.00ms 
-solver 132.00ms 
-facts 2.00ms 
-solver 103.00ms 
-facts 1.00ms 
-facts 2.00ms 
-solver 136.00ms 
-solver 134.00ms 
-facts 1.00ms 
-facts 2.00ms 
-solver 138.00ms 
-solver 138.00ms 
-facts 2.00ms 
-facts 1.00ms 
-solver 118.00ms 
-solver 65.00ms 
-facts 1.00ms 
-solver 110.00ms 
-facts 2.00ms 
-solver 105.00ms 
-facts 3.00ms 
-solver 115.00ms 
-facts 2.00ms 
-solver 120.00ms 
-facts 2.00ms 
-solver 260.00ms 
-facts 2.00ms 
-solver 119.00ms 
-facts 2.00ms 
-solver 122.00ms 
-facts 2.00ms 
-solver 116.00ms 
-facts 2.00ms 
-solver 132.00ms 
-facts 1.00ms 
-solver 114.00ms 
-facts 2.00ms 
-solver 110.00ms 
-facts 2.00ms 
-solver 109.00ms 
-facts 2.00ms 
-solver 107.00ms 
-facts 2.00ms 
-solver 101.00ms 
-facts 1.00ms 
-solver 102.00ms 
-facts 2.00ms 
-solver 110.00ms 
-facts 2.00ms 
-solver 128.00ms 
-facts 2.00ms 
-solver 122.00ms 
-facts 2.00ms 
-solver 105.00ms 
-facts 1.00ms 
-solver 105.00ms 
-facts 2.00ms 
-solver 101.00ms 
-facts 2.00ms 
-solver 138.00ms 
-facts 2.00ms 
-solver 112.00ms 
-facts 2.00ms 
-solver 121.00ms 
-facts 2.00ms 
-solver 102.00ms 
-facts 2.00ms 
-solver 114.00ms 
-facts 2.00ms 
-solver 105.00ms 
-facts 1.00ms 
-solver 108.00ms 
-facts 1.00ms 
-solver 94.00ms 
-facts 1.00ms 
-facts executor 26.00ms 
-solver Solver executor Planner1 144.00ms 
+facts executor 37.00ms 
+solver Solver executor Planner1 146.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 118.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 107.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 128.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 121.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 122.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 123.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 117.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 125.00ms 
 facts executor 3.00ms 
-solver Solver executor Planner1 95.00ms 
+solver Solver executor Planner1 119.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 94.00ms 
 facts executor 2.00ms 
 solver Solver executor Planner1 93.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 88.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 91.00ms 
 facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 128.00ms 
-solver Solver executor Planner1 128.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 113.00ms 
-solver Solver executor Planner1 114.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 103.00ms 
-solver Solver executor Planner1 103.00ms 
-facts executor 2.00ms 
+solver Solver executor Planner1 126.00ms 
 facts executor 3.00ms 
-solver Solver executor Planner0 61.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 115.00ms 
-solver Solver executor Planner1 115.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 362.00ms 
-solver Solver executor Planner1 361.00ms 
+solver Solver executor Planner1 124.00ms 
 facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 143.00ms 
-solver Solver executor Planner1 207.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 134.00ms 
 solver Solver executor Planner1 134.00ms 
-facts executor 1.00ms 
+facts executor 6.00ms 
+solver Solver executor Planner1 166.00ms 
 facts executor 2.00ms 
-solver Solver executor Planner0 118.00ms 
-solver Solver executor Planner1 117.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 97.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 100.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 124.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 272.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 123.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 113.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 111.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 113.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 119.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 117.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 159.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 120.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 123.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 125.00ms 
-facts executor 7.00ms 
-solver Solver executor Planner1 128.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 111.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 132.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 124.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 132.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 147.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 108.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 120.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 113.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 119.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 119.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 129.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 75.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 111.00ms 
-solver Solver executor Planner0 63.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 117.00ms 
-solver Solver executor Planner1 116.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 78.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 141.00ms 
-solver Solver executor Planner0 83.00ms 
-facts executor 1.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner0 158.00ms 
-solver Solver executor Planner1 160.00ms 
-facts executor 1.00ms 
-facts executor 5.00ms 
-solver Solver executor Planner0 127.00ms 
-facts executor 4.00ms 
-solver Solver executor Planner1 259.00ms 
-solver Solver executor Planner0 164.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 126.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 426.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 123.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 121.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 110.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 106.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 102.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 106.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 121.00ms 
-facts executor 2.00ms 
-facts executor 27.00ms 
-solver Solver executor Planner1 142.00ms 
-facts executor 5.00ms 
 solver Solver executor Planner1 127.00ms 
 facts executor 2.00ms 
-solver Solver executor Planner1 119.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 129.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 114.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 101.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 101.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 102.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 108.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 110.00ms 
-facts executor 21.00ms 
-solver Solver executor Planner1 282.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 121.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 108.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 103.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 97.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 125.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 131.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 313.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 237.00ms 
-solver Solver executor Planner1 237.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 129.00ms 
-solver Solver executor Planner1 129.00ms 
-facts executor 1.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner0 127.00ms 
-solver Solver executor Planner1 128.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 131.00ms 
-solver Solver executor Planner1 131.00ms 
-facts executor 2.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 118.00ms 
-solver Solver executor Planner0 70.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 140.00ms 
-solver Solver executor Planner1 143.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 281.00ms 
-solver Solver executor Planner1 397.00ms 
-facts executor 2.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner0 153.00ms 
-solver Solver executor Planner1 152.00ms 
-facts executor 2.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 80.00ms 
-solver Solver executor Planner1 139.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 257.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 141.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 126.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 119.00ms 
-facts executor 2.00ms 
 solver Solver executor Planner1 111.00ms 
 facts executor 2.00ms 
-solver Solver executor Planner1 122.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 107.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 103.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 114.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 120.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 98.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 93.00ms 
+solver Solver executor Planner1 100.00ms 
 facts executor 1.00ms 
-solver Solver executor Planner1 106.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 113.00ms 
-facts executor 2.00ms 
 solver Solver executor Planner1 99.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 106.00ms 
 facts executor 1.00ms 
-solver Solver executor Planner1 96.00ms 
+solver Solver executor Planner1 95.00ms 
 facts executor 1.00ms 
-solver Solver executor Planner1 103.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
+solver Solver executor Planner1 104.00ms 
 facts executor 2.00ms 
 solver Solver executor Planner1 105.00ms 
 facts executor 1.00ms 
-solver Solver executor Planner1 110.00ms 
+solver Solver executor Planner1 119.00ms 
 facts executor 2.00ms 
+solver Solver executor Planner1 119.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 113.00ms 
+facts executor 9.00ms 
+solver Solver executor Planner1 207.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 104.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 101.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 112.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 118.00ms 
+facts executor 1.00ms 
 solver Solver executor Planner1 108.00ms 
 facts executor 2.00ms 
 solver Solver executor Planner1 95.00ms 
 facts executor 2.00ms 
-solver Solver executor Planner1 100.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 109.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 123.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 101.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 101.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 108.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 118.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 100.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 112.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 117.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 105.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 105.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 104.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 152.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 106.00ms 
-facts executor 1.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner0 122.00ms 
-solver Solver executor Planner1 122.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 147.00ms 
-solver Solver executor Planner1 147.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 144.00ms 
-solver Solver executor Planner1 145.00ms 
-facts executor 26.00ms 
-solver Solver executor Planner1 136.00ms 
-facts executor 2.00ms 
 solver Solver executor Planner1 103.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 110.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 117.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 108.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 96.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 96.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 106.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 116.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 127.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 278.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 176.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 120.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 115.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 99.00ms 
-facts executor 2.00ms 
-facts executor 39.00ms 
-solver Solver executor Planner1 170.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 143.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 131.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 182.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 147.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 143.00ms 
-facts executor 5.00ms 
-facts executor 5.00ms 
-solver Solver executor Planner0 145.00ms 
+facts executor 28.00ms 
 solver Solver executor Planner1 145.00ms 
 facts executor 2.00ms 
+solver Solver executor Planner1 145.00ms 
 facts executor 2.00ms 
-solver Solver executor Planner0 114.00ms 
-solver Solver executor Planner1 185.00ms 
-facts executor 1.00ms 
-facts executor 5.00ms 
-solver Solver executor Planner0 123.00ms 
-solver Solver executor Planner1 221.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 90.00ms 
-solver Solver executor Planner1 159.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 91.00ms 
-solver Solver executor Planner1 160.00ms 
-facts executor 1.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner0 296.00ms 
-solver Solver executor Planner1 324.00ms 
-facts executor 3.00ms 
-solver Solver executor Planner1 235.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 172.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 132.00ms 
-facts executor 1.00ms 
-solver Solver executor Planner1 141.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 168.00ms 
-facts executor 2.00ms 
-solver Solver executor Planner1 141.00ms 
+solver Solver executor Planner1 147.00ms 
 facts executor 2.00ms 
 solver Solver executor Planner1 133.00ms 
 facts executor 2.00ms 
+solver Solver executor Planner1 143.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 146.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 159.00ms 
+facts executor 5.00ms 
+solver Solver executor Planner1 142.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 121.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 106.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 113.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 114.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 121.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 141.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 122.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 110.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 123.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 108.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 115.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 122.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 118.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 117.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 136.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 121.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 137.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 120.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 114.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 137.00ms 
+facts executor 1.00ms 
+facts executor 34.00ms 
+solver Solver executor Planner1 237.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 223.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 265.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 226.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 226.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 125.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 151.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 189.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 205.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 186.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 208.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 174.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 233.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 212.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 185.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 218.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 200.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 200.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 342.00ms 
+facts executor 12.00ms 
+solver Solver executor Planner1 224.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 141.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 156.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 180.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 227.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 157.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 130.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 146.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 423.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 226.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 140.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 129.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 183.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 146.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 137.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 200.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 203.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 133.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 170.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 253.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 288.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 132.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 125.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 147.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 166.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 189.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 194.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 156.00ms 
+facts executor 22.00ms 
+solver Solver executor Planner1 276.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 211.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 236.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 198.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 187.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 167.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 173.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 137.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 142.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 193.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 305.00ms 
+facts executor 10.00ms 
+solver Solver executor Planner1 174.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 146.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 269.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 139.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 142.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 220.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 131.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 138.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 219.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 149.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 148.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 136.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 170.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 194.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 297.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 201.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 358.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 233.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 185.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 214.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 234.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 158.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 195.00ms 
+facts executor 3.00ms 
+solver Solver executor Planner1 399.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 184.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 134.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 173.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 203.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 143.00ms 
+facts executor 1.00ms 
+solver Solver executor Planner1 141.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 348.00ms 
+facts executor 2.00ms 
+solver Solver executor Planner1 235.00ms 

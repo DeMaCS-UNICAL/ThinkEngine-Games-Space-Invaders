@@ -11,19 +11,8 @@ invaders_move_speed(X,0):-invadersSensor(_,_,invaders(increaseFactor(X))).
 invaders_move_speed(S_Next,T_Next) :- invaders_direction("right"), invaders_move_speed(S,T), S_Next=S+25, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 invaders_move_speed(S_Next,T_Next) :- invaders_direction("left"), invaders_move_speed(S,T), S_Next=S-25, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 
-
-%bunkerSensor0(bunker,objectIndex(Index),).
-%bunkerSensor0(bunker,objectIndex(Index),bunker(xRight(Value))).
-
-bunker(X,Y):-bunkerSensor(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor(ID,objectIndex(Index),bunker(xRight(Y))).
-bunker(X,Y):-bunkerSensor0(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor0(ID,objectIndex(Index),bunker(xRight(Y))).
-bunker(X,Y):-bunkerSensor01(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor01(ID,objectIndex(Index),bunker(xRight(Y))).
-bunker(X,Y):-bunkerSensor012(ID,objectIndex(Index),bunker(xLeft(X))),bunkerSensor012(ID,objectIndex(Index),bunker(xRight(Y))).
-missile(X_Left,X_Right,Y,S,0):-missileSensor(ID,objectIndex(Index),projectile(xLeft(X_Left))),missileSensor(ID,objectIndex(Index),projectile(xRight(X_Right))),missileSensor(ID,objectIndex(Index),intPair(y(Y))),missileSensor(ID,objectIndex(Index),projectile(increaseFactor(S))).
-
-
 % MAX PLAN LENGTH
-maxTime(5).
+maxTime(10).
 min_x_matrix(-15500).
 max_x_matrix(15500).
 action("MoveAction").
@@ -50,9 +39,6 @@ player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"MoveAction"), actionArg
 player(X_Next,Y,T_Next) :- player(X,Y,T), applyAction(T,"MoveAction"), actionArgument(T,"move","left"), player_move_speed(S), X_Next=X-S, X_Next>=X_Min, min_x_matrix(X_Min), T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 player(X,Y,T_Next) :- player(X,Y,T), applyAction(T,"FireAction"), T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 
-% ESTIMATE MISSILE'S FUTURE POSITION 
-missile(X_Left,X_Right,Y_Next,S,T_Next) :- missile(X_Left,X_Right,Y,S,T), Y_Next=Y+S, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
-
 % ESTIMATE LASER'S FUTURE POSITION 
 laser(X,Y_Next,S,T_Next) :- laser(X,Y,S,T), Y_Next=Y+S, T_Next=T+1, T_Next<=T_Max, maxTime(T_Max).
 laser(X,Y,200,T):-player(X,Y,T), applyAction(T,"FireAction").
@@ -72,7 +58,7 @@ invaders_near_player(T) :- invaders(_,Y1,T), player(_,Y2,T), Y1>=Y2, Y1-Y2<=1200
 
 % STRATEGIA DI MOVIMENTO
 % NON ANDARE IN PUNTI ESTREMI (DESTRA/SINISTRA) DOVE NON CI SONO INVADERS
-:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,Y1,T), not player_under_missile(X1,Y1,T), most_left_invader(X2,T), X1<=X2+100, T_Next=T+1.
+:-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","left"), player(X1,Y1,T), most_left_invader(X2,T), X1<=X2+100, T_Next=T+1.
 :-applyAction(T_Next,"MoveAction"), actionArgument(T_Next,"move","right"), player(X1,_,T), most_right_invader(X2,T), X1>=X2-100, T_Next=T+1.
 
 
@@ -105,19 +91,12 @@ distance_player_invader(X,T) :- invaders_near_player(T), player(X1,_,T), nearest
 :~actionArgument(_,"move",M), invaders_direction(M). [1@1,M]
 
 % ATTACK
-% FIRE WHEN THERE IS AN INVADER UP TO THE PLAYER AND THERE IS NOT A BUNKER
-:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T_Next), player(X,_,T), player_under_bunker(T_Next), T_Next=T+1. [1@6,X,T]
-:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), nearest_y_invader(X1,_,T_Next), player(X2,_,T), player_under_bunker(T_Next), T_Next=T+1. [1@6,T,X1,X2]
+% FIRE WHEN THERE IS AN INVADER UP TO THE PLAYER
+:~applyAction(T_Next,"MoveAction"), nearest_y_invader(X,_,T_Next), player(X,_,T), T_Next=T+1. [1@6,X,T]
+:~applyAction(T_Next,"MoveAction"), invaders_near_player(T_Next), nearest_y_invader(X1,_,T_Next), player(X2,_,T), T_Next=T+1. [1@6,T,X1,X2]
 % AUMENTA LA FREQUENZA DI FUOCO QUANDO GLI INVADERS SONO VICINI AL PLAYER
 player_under_invader(T) :- player(X,_,T), invaders(X,_,T).
 %:~applyAction(T, "MoveAction"), invaders_near_player(T), player_under_invader(T). [1@6,T]
-
-% DEFEND
-% IF THERE IS A MISSILE UP TO THE PLAYER, MOVE OUTSIDE ITS RANGE
-player_under_missile(X,Y,T) :- missile(X_Left,X_Right,_,_,T), player(X,Y,T), X>=X_Left, X<=X_Right,T_Next=T+1.
-player_under_bunker(T) :- player(X,Y,T), bunker(X_Left,X_Right), X>=X_Left, X<=X_Right.
-%:~applyAction(T_Next,"FireAction"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@5,T,T_Next,Y1,Y2,X_Left,X_Right]
-%:~actionArgument(T_Next,"move","right"), missile(X_Left,X_Right,Y1,_,T), player(X,Y2,T), X>=X_Left, X<=X_Right,T_Next=T+1. [1@6,T,T_Next,Y1,Y2,X_Left,X_Right]
 
 a.
 :~a. [1@1]
@@ -131,6 +110,4 @@ a.
 
 #show applyAction/2. 
 #show actionArgument/3.
-%#show player_under_bunker/1.
-%#show missile/5.
 %#show player/3.
