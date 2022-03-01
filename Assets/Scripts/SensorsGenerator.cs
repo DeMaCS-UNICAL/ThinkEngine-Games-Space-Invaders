@@ -13,7 +13,7 @@ public class SensorsGenerator : MonoBehaviour
     }
     void Update()
     {
-        if (++count % 50 ==0 && testingList.Count<1000)
+        if (++count % 50 ==0 && testingList.Count<100000)
         {
             testingList.AddRange(testingList);
         }
