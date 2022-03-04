@@ -21,11 +21,6 @@ public class FireAction : Action
         // RECOMPUTE PLAN WHEN:
         // 1.ENEMIES DIRECTION CHANGES
         // 2.ENEMY KILLED
-        if (count > 0)
-        {
-            count--;
-            return State.WAIT;
-        }
         //State must be returned using State.WAIT|State.ABORT|State.READY
         if (FindObjectOfType<Player>() == null)
         {

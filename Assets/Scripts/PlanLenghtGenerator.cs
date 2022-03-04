@@ -11,9 +11,10 @@ public class PlanLenghtGenerator : MonoBehaviour
     void Update()
     {
         frame++;
-        if (frame % 100 == 0)
+        if (frame % (2*n) == 0)
         {
-            n += 20;
+            frame = 0;
+            n *= 5;
         }
     }
 }

@@ -672,9 +672,6 @@ GameObject:
   - component: {fileID: 857372204}
   - component: {fileID: 857372203}
   - component: {fileID: 857372208}
-  - component: {fileID: 857372211}
-  - component: {fileID: 857372210}
-  - component: {fileID: 857372209}
   m_Layer: 0
   m_Name: Planner
   m_TagString: Untagged
@@ -749,8 +746,7 @@ MonoBehaviour:
   enableBrain: 1
   debug: 0
   maintainInputFile: 0
-  _chosenSensorConfigurations:
-  - plannerSensor
+  _chosenSensorConfigurations: []
   AIFilesPath: .\Assets\StreamingAssets\
   AIFilesPrefix: PlannerPlanner1
   _AIFileTemplatePath: .\Assets\Resources\PlannerBrainTemplatePlannerPlanner1.asp
@@ -759,62 +755,6 @@ MonoBehaviour:
   specificAIFile: 0
   globalAIFile: 0
   _priority: 0
---- !u!114 &857372209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857372201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -508812344, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _savedProperties:
-  - myStrings:
-    - PlanLenghtGenerator
-    Count: 1
-  - myStrings:
-    - PlanLenghtGenerator
-    - n
-    Count: 2
-  _toMapProperties:
-  - myStrings:
-    - PlanLenghtGenerator
-    - n
-    Count: 2
-  _configurationName: plannerSensor
-  operationPerPropertyIndexes: 5dd1941b0712326d
-  operationPerPropertyOperations: 0000000000000000
-  specificValuePerPropertyIndexes: 5dd1941b0712326d
-  specificValuePerPropertyValues:
-  - 
-  - 
---- !u!114 &857372210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857372201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 417179157, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &857372211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857372201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b48ed1ae2d88f146b6044467f950e47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &962212318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,10 +1742,10 @@ MonoBehaviour:
   m_Script: {fileID: -459514393, guid: 06783fc4099d1e04ba318698c43e592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MIN_AVG_FPS: 60
+  MIN_AVG_FPS: 58
   MIN_CURRENT_FPS: 50
-  MAX_AVG_FPS: 170
-  MAX_CURRENT_FPS: 170
+  MAX_AVG_FPS: 60
+  MAX_CURRENT_FPS: 55
 --- !u!4 &1773838787
 Transform:
   m_ObjectHideFlags: 0

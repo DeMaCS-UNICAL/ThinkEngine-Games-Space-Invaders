@@ -2,7 +2,7 @@
 possibleMove(left).
 possibleMove(right).
 max(N):-plannerSensor(planner,objectIndex(Index),planLenghtGenerator(n(N))).
-
+max(1000).
 number(0..1000).
 even(0).
 even(N):-even(N1), N=N1+2, N<=M, max(M).
